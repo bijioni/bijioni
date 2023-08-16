@@ -1,0 +1,324 @@
+/* 
+
+1) ---------DİYALOG KUTULARI----------
+- ALERT
+-PROMPT
+-COMFİRM
+*/
+
+// Alert() = uyarı
+// prompt() = kulanıcıdan değer almak için
+// Comfirm() )= kullanıcıdan true false değeri alır
+
+/*
+
+2) --------- KOŞUL YAPILARI --------
+
+
+let yas = Number(prompt("yasınızı giriniz:"))
+let bütce = Number(prompt("bütçenizi giriniz:"))
+
+if(yas >= 18 && bütce >= 2000){
+    alert("ehliyet sınavını geçtiniz")
+}else{
+    alert("ehliyet sınavından kaldınız")
+}
+*/
+/* 
+
+---------- PROJE = BEDEN KİTLE İNDEKSİ HESAPLAMA----------
+
+
+let kilo = Number(prompt("lütfen kilonuzu giriniz"))
+let boy = Number(prompt("boyunuzu metre cinsinden giriniz"))
+let sonuc = kilo/(boy*2)
+
+if(sonuc < 18.5){
+    alert("ideal kilonun altındasınız" + sonuc)
+
+}else if( sonuc >= 18.5 && sonuc <= 24.9){
+    alert("ideal kilodasınız" + sonuc)
+    
+}else if(sonuc >= 25 && sonuc <= 29.9){
+    alert("ideal kilonun üstündesiniz" + sonuc)
+
+}else if(sonuc >= 30 && sonuc <= 39.9){
+    alert("obezsiniz" + sonuc)
+
+}else if(sonuc >= 40){
+    alert("morbit obezsiniz" + sonuc)
+}
+*/
+/*
+
+---------- PROJE = BENZİN İSTASYONU ----------
+
+
+let dizel = 23.4, benzin = 22, LPG = 11
+
+const yenisatir = "\r\n";
+
+const yakitmetni = "1-dizel" + yenisatir
++ "2-benzin" + yenisatir
++"3-LPG" + yenisatir
++ "yakit türünüzü seçiniz";
+
+let yakittipi = prompt(yakitmetni)
+let yakitlitresi = Number(prompt("yakitin litresini giriniz"))
+let bakiye = Number(prompt("bakiyenizi giriniz"))
+
+if(yakittipi == 1){
+    //DİZEL
+    let odenecektutar = dizel*yakitlitresi
+    if(odenecektutar <= bakiye){
+        //bakiyeniz yeterli
+        alert("işlem onaylandi" + yenisatir
+        +"kalan bakiyeniz" + (bakiye - odenecektutar))
+    }else{
+        // yetersiz bakiye
+        alert("yetersiz bakiye" + yenisatir
+        +"ödenecek tutar:"+odenecektutar + yenisatir
+        +"bakiyeniz:"+ bakiye + yenisatir
+        +"eksik tutar"+ (odenecektutar-bakiye));
+    }
+}else if(yakittipi == 2){
+    //BENZİN
+    let odenecektutar = benzin*yakitlitresi
+    if(odenecektutar <= bakiye){
+        //bakiyeniz yeterli
+        alert("işlem onaylandi" + yenisatir
+        +"kalan bakiyeniz" + (bakiye - odenecektutar))
+    }else{
+        // yetersiz bakiye
+        alert("yetersiz bakiye" + yenisatir
+        +"ödenecek tutar:"+odenecektutar + yenisatir
+        +"bakiyeniz:"+ bakiye + yenisatir
+        +"eksik tutar"+ (odenecektutar-bakiye));
+    }
+}else if(yakittipi == 3){
+    //LPG
+    let odenecektutar = LPG*yakitlitresi
+    if(odenecektutar <= bakiye){
+        //bakiyeniz yeterli
+        alert("işlem onaylandi" + yenisatir
+        +"kalan bakiyeniz" + (bakiye - odenecektutar))
+    }else{
+        // yetersiz bakiye
+        alert("yetersiz bakiye" + yenisatir
+        +"ödenecek tutar:"+odenecektutar + yenisatir
+        +"bakiyeniz:"+ bakiye + yenisatir
+        +"eksik tutar"+ (odenecektutar-bakiye));
+    }
+}else{
+    alert("lütfen geçerli bir rakam giriniz")
+}
+
+
+---------------PROJE = SWİTCH İLE ATM UYGULAMASI ------------
+
+let bakiye = 1000
+const yenisatir = "\r\n";
+
+let metin = "1- bakiye görme" + yenisatir
++"2- para çekme" + yenisatir
++"3- para yatirma" + yenisatir
++"4- çikiş" + yenisatir
++"lütfen bir değer giriniz"
+
+let secim = prompt(metin)
+
+switch(secim){
+    case "1": alert("bakiyeniz"+ bakiye)
+    break;
+
+    case "2":
+         let cekilecektutar = Number(prompt("çekmek istediğiniz tutarı giriniz:"))
+         if(cekilecektutar < bakiye){
+
+         }else{
+            alert("bakiyeniz yetersiz"+ yenisatir
+            +"bakiyeniz:"+ bakiye)
+         }
+         break;
+
+    case "3": 
+    let yatirilacak = Number(prompt("yatirmak istediğiniz tutari giriniz")) 
+    {
+        bakiye = bakiye + yatirilacak
+        alert("güncel bakiyeniz:" + bakiye);
+        break;
+    }
+    case "4":
+        console.log("sistemden çikiş yapilmiştir")
+        break;
+    default:
+        alert("lütfen geçerli bir rakam giriniz") 
+        break;   
+      
+}
+-------------- PROJE = TYT PUAN HESAPLAMA ------------
+!soru sayıları:
+1- türkçe 40
+2- matematik 40
+3- sosyal bilimler 20
+4- fen bilimler 20
+
+--------> beleşten 100 puan geliyor
+--------> okul max 60 puan veriyor
+--------> her soru 3.3 puan
+
+let turkceD, turkceY = 0
+let matD, matY = 0
+let sosD, sosY = 0
+let fenD , fenY = 0
+let puan = 0
+let okulpuani = 0
+
+const yenisatir = "\r\n";
+let mesaj = "TYT puan hesaplamaya hoş geldiniz" + yenisatir
++ "1- puan hesapla" + yenisatir
++ "2- cikis yap";
+
+let secim = prompt(mesaj)
+
+switch(secim){
+    case "1":
+        okulpuani = Number(prompt("okul puaninizi giriniz:"))
+
+        turkceD = Number(prompt("turkce doğru sayinizi giriniz"))
+        turkceY = Number(prompt("turkce yanlis sayinizi giriniz"))
+
+        matD = Number(prompt("mat doğru sayinizi giriniz"))
+        matY = Number(prompt("mat yanlis sayinizi giriniz"))
+
+        sosD = Number(prompt("sos doğru sayinizi giriniz"))
+        sosY = Number(prompt("sos yanlis sayinizi giriniz"))
+
+        fenD = Number(prompt("fen doğru sayinizi giriniz"))
+        fenY = Number(prompt("fen yanlis sayinizi giriniz"))
+
+        //4 yanlıs bir dogruyu götürüyor
+        let dogrusayisi = turkceD + matD + sosD + fenD
+        let yanlissayisi = turkceY + matY + sosY + fenY
+        let kalandogrusayisi = dogrusayisi-(yanlissayisi/4);
+        puan = 100 +(kalandogrusayisi*4);
+
+        alert("TYT puaniniz:" + puan)
+
+        break;
+    case "2":
+        alert("uygulamadan çikiş yapildi")
+
+        break;
+    default:
+
+        break;       
+}
+
+
+-------------- TÜR DÖNÜŞÜMLERİ ------------
+strings,numbers,booelans,undefined, and null
+objects,function
+parseint = string veri türünü number veri tipine dönüştürür
+
+
+--------------- breakpoınt ve tooltip -------------
+debugger: debugger yazdıktan sonraki kodları hatayı bulmak için teker
+teker çalıştırmak için yazılır
+
+
+--------------------- DÖNGÜLER ----------------------
+1- for
+2- while
+3- do-while
+4-foreach
+
+!--------------------1) FOR DÖNGÜSÜ -----------------------
+
+for(degisken; kosul; artırma-azaltma){
+    /yazdığımız kodlar
+}
+
+ÖRNEK:
+
+for(let i = 1; i<=10; i++){
+    console.log(i)
+}
+
+!---------------------2) WHİLE DÖNGÜSÜ -------------------------
+? 1 den 10 a kadar consola yazdırma
+
+let sayi = 1
+
+while(sayi<= 10){
+    console.log(sayi);
+
+    sayi++;
+}
+
+? 1 den 10 a kadar sadece çift sayıları konsola yazdırma
+
+let sayi = 0
+
+while(sayi<= 10){
+
+    if(sayi%2 == 0){
+        console.log(sayi)
+    }
+    sayi++;
+}
+
+!----------------------3) DO WHİLE DÖNGÜSÜ --------------------------
+? do while ile 1 den 10 a kadar yazdırma
+let sayac = 1
+
+do{
+    console.log(sayac);
+    sayac++;
+}while(sayac <= 10)
+
+? do while ile 1 den 20 ye kadar olan tek sayıları toplama
+
+let sayi = 1
+let toplam = 0
+
+do{
+    if(sayi%2 == 1){
+        toplam+=sayi;
+    }
+    sayi++;
+}while(sayi <= 20)
+
+alert(toplam)
+
+!------------------------ BREAK VE CONTİNUE ----------------------
+
+! 1)------- BREAK --------
+? 1 den 10 a kadar sayıları yazdıralım 8 e geldiğinde döngüden çıkılsın
+
+let sayi = 1
+while (sayi <= 10){
+    alert(sayi)
+    if(sayi == 8){
+        break
+    }
+    sayi++;
+}
+
+! 2) --------- contunie -----------
+
+let sayac = 0
+
+while(sayac <= 10){
+    sayac++;
+    if(sayac >10){
+        break;
+    }
+
+    if(sayac == 8){
+        continue;
+    }
+
+    alert(sayac);
+}
+*/
